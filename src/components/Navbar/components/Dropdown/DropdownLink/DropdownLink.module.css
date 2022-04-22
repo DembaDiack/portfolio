@@ -1,0 +1,25 @@
+.dropdownLink 
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    height: 50px;
+    cursor: pointer;
+    align-items: center;
+    transition: 0.1s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    width: 90%;
+    border-radius: inherit;
+}
+.dropdownLink:hover 
+{
+    background-color: var(--demba-light-grey);
+}
+.logo 
+{
+    color: var(--demba-yellow);
+    font-size: small;
+}
+a 
+{
+    color: inherit;
+    text-decoration: none;
+}

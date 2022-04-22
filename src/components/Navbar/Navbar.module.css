@@ -1,0 +1,22 @@
+.navbar 
+{
+    display: flex;
+    height: 70px;
+    background: var(--demba-dark);
+    color: white;
+    align-items: center;
+    padding: 0px 15% 0px 15%;
+    flex-direction: row;
+    border-bottom: solid 1px rgb(137, 137, 137);
+}
+.left 
+{
+    flex-grow: 2;
+}
+.right 
+{
+    flex-grow: 0.5;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+}

@@ -7,6 +7,9 @@ import { RootState } from "./store/store";
 import Banner from "./components/Banner/Banner";
 import Section from "./components/Section/Section";
 import { incCounter } from "./store/reducers/AppReducer";
+import BGParticles from "./components/BGParticles/BGParticles";
+import AboutMe from "./components/Sections/AboutMe/AboutMe";
+import WhatYouNeed from "./components/Sections/WhatYouNeed/WhatYouNeed";
 
 function App() {
   const state = useSelector((state: RootState) => {
@@ -23,8 +26,10 @@ function App() {
   return (
     <div className="app-container">
       <Navbar title="Demba Diack" />
+      <BGParticles/>
       <Banner />
-      <Section/>
+      <AboutMe/>
+      <WhatYouNeed/>
     </div>
   );
 }

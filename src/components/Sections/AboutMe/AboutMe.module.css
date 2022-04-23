@@ -1,0 +1,27 @@
+.icon {
+  transition: 0.1s cubic-bezier(0.47, 0, 0.745, 0.715);
+  border-radius: 10%;
+  cursor: pointer;
+}
+:root {
+  --blur: 0px;
+  --contrast: 100%;
+  --brightness: 100%;
+  --contrast: 100%;
+  --dropshadow: 0px 0px 0px black;
+  --grayscale: 0%;
+  --hue-rotate: 0deg;
+  --invert: 0%;
+  --opacity: 100%;
+  --saturate: 100%;
+  --sepia: 0%;
+}
+/*Apply Defult Variables To Image*/
+
+.icon:hover {
+  filter: blur(var(--blur)) contrast(var(--contrast))
+    brightness(var(--brightness)) contrast(var(--contrast))
+    drop-shadow(var(--dropshadow)) grayscale(var(--grayscale))
+    hue-rotate(var(--hue-rotate)) invert(var(--invert)) opacity(var(--opacity))
+    saturate(var(--saturate)) sepia(var(--sepia));
+}

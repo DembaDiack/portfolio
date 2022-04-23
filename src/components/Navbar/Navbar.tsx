@@ -31,7 +31,7 @@ function Navbar(props: NavProps) {
       </div>
       <div className={CSS.right}>
         <div>
-          <Dropdown links={links} />
+          <Dropdown title="My Links" links={links} />
         </div>
       </div>
     </div>

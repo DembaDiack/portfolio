@@ -23,7 +23,7 @@ function TextCarousel() {
         addEndListener={(node: HTMLElement, done: () => void) => {
           node.addEventListener("transitionend", done, false);
         }}
-        classNames="slide"
+        classNames="fade"
         appear={true}
         timeout={600}
         in={true}

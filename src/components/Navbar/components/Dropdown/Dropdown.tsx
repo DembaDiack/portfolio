@@ -4,7 +4,8 @@ import DropdownLink, { DropdownLinkProps } from './DropdownLink/DropdownLink';
 
 export interface DropdownProps 
 {
-    links:DropdownLinkProps[]
+    links:DropdownLinkProps[],
+    title : string
 }
 
 function Dropdown(props:DropdownProps) {
@@ -21,7 +22,7 @@ function Dropdown(props:DropdownProps) {
   return (
     <div className={CSS.dropdown}>
         <div className={CSS.title}>
-            Dropdown title
+            {props.title}
         </div>
         <div className={CSS.body}>
             {dropdowns}

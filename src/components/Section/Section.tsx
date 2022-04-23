@@ -1,33 +1,43 @@
-import React from 'react'
-import Divider from '../Divider/Divider';
+import React from "react";
 import CSS from "./Section.module.css";
-import TypescriptIcon from "../../assets/typescript.svg";
-function Section() {
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-  return (
-    <div className={`${CSS.grid} ${CSS.hoverScale}`} style={{marginTop : 15,overflow : "hidden"}}>
-        <div>
-            <div style={{fontSize : 50,fontWeight : "bold"}}>
-                FIND THE BEAUTY IN
-                <div>
-                SIMPLICITY.
-                </div>
-                </div>
-            <div>
-                I find simple designs to be the best of designs
-            </div>
-            <Divider/>
-            <div>
-                with my computer science degree from the top ranked polytechnical school in dakar<br/>
-                i can conjur up any design you hand me with ease, while knocking the backend out as well.<br/>
-                yes i just defined what a FullStack dev is 	🐱‍🏍
-            </div>
-        </div>
-        <div>
-            <img className={CSS.icon} width={"250px"} src={TypescriptIcon}/>
-        </div>
-    </div>
-  )
+interface sectionProps {
+  children: JSX.Element[] | JSX.Element;
+  width?: string;
+  sharp?: boolean;
+  height?:string,
+  row?:boolean,
+  style?: React.CSSProperties | undefined
 }
 
-export default Section
+function Section(props: sectionProps) {
+  const [titleRef, titleInView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-100px 0px",
+  });
+
+  return (
+    <motion.div
+      ref={titleRef}
+      animate={{ scale: titleInView ? 1 : 0.8 }}
+      transition={{ duration: 2.5 }}
+      className={`${CSS.grid} ${CSS.hoverScale}`}
+      style={{
+        marginTop: 15,
+        overflow: "hidden",
+        width: props.width ? props.width : "80%",
+        borderRadius: props.sharp ? "0px" : "15px",
+        height : props.height ? props.height : "100%",
+        gridAutoFlow : props.row ? "row" : "column",
+        ...props.style
+
+      }}
+    >
+      {props.children}
+    </motion.div>
+  );
+}
+
+export default Section;

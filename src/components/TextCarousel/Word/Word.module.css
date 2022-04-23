@@ -1,0 +1,10 @@
+.word div 
+{
+    cursor: pointer;
+    transition: 0.3s;
+}
+.word div:hover 
+{
+    color: var(--demba-yellow);
+    transform: rotate(-45deg);
+}

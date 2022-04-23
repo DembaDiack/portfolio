@@ -1,0 +1,26 @@
+.wrapper 
+{
+    border: solid 1px white;
+    background: red;
+    display: inline-block;
+    height: 45%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    transition: 0.5s;
+}
+.wrapper * {
+    padding: 0;
+}
+.wheel {
+    transition: 0.3s;
+}
+.wrapper:hover .wheel 
+{
+    transform: rotate(180deg);
+}
+.wheelbottom 
+{
+    transform: rotate(180deg);
+}

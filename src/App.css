@@ -8,7 +8,75 @@
   --demba-yellow : rgb(255, 191, 0);
 }
 
-body 
+/* body 
 {
   background: whitesmoke;
+} */
+.app-container 
+{
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.fade-appear 
+{
+  opacity: 0;
+  z-index: 1;
+}
+.fade-appear.fade-appear-active 
+{
+  opacity: 1;
+  transition: 0.3s;
+}
+.slideIn-appear 
+{
+  transform: translateY(-1000px);
+  z-index: 1;
+}
+.slideIn-appear.slideIn-appear-active 
+{
+  transform: translateY(0px);
+  transition: 0.3s;
+}
+.slideOut-appear 
+{
+  transform: translateY(0px);
+  z-index: 1;
+}
+.slideOut-appear.slideIn-appear-active 
+{
+  transform: translateY(-1000px);
+  transition: 0.3s;
+}
+
+.slide-appear 
+{
+  transform: translateY(-1000px);
+  z-index: 1;
+}
+.slide-appear.slide-appear-active 
+{
+  transform: translateY(0px);
+  transition: 0.3s;
+}
+.slide-enter 
+{
+  transform: translateY(-1000px);
+  z-index: 1;
+}
+.slide-enter.slide-enter-active 
+{
+  transform: translateY(0px);
+  transition: 0.3s;
+}
+.slide-exit 
+{
+  transform: translateY(0px);
+  z-index: 1;
+}
+.slide-exit.slideIn-exit-active 
+{
+  transform: translateY(-1000px);
+  transition: 0.3s;
 }

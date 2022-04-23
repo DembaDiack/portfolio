@@ -4,6 +4,8 @@ import { DropdownLinkProps } from "./components/Dropdown/DropdownLink/DropdownLi
 import CSS from "./Navbar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faCoffee } from "@fortawesome/free-solid-svg-icons";
+import LinkedInLogo from "../../assets/linkedin.svg";
+import GitHubLogo from "../../assets/github.svg";
 
 export interface NavProps {
   title: string;
@@ -11,13 +13,13 @@ export interface NavProps {
 const links: DropdownLinkProps[] = [
   {
     href: "#",
-    title: "Link 1",
-    logo: <FontAwesomeIcon icon={faBars}/>
+    title: "Linkedin",
+    logo: <img src={LinkedInLogo} width={20}/>
   },
   {
     href: "#",
-    title: "Link 2",
-    logo : <FontAwesomeIcon icon={faCoffee}/>
+    title: "Github",
+    logo : <img style={{filter : "contrast(0)"}} src={GitHubLogo} width={20}/>
   },
 ];
 

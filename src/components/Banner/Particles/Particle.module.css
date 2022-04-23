@@ -1,0 +1,30 @@
+.particle_orbit {
+  position: absolute;
+  animation: orbit 100s infinite linear;
+}
+.particle 
+{
+    position: absolute;
+    animation: rotation 10s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+    transform-origin: 150px 150px;
+  }
+  to {
+    transform: rotate(359deg);
+    transform-origin: 150px 150px;
+  }
+}

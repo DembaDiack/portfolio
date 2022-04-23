@@ -1,3 +1,5 @@
 interface AppState {
-    name: string
+    name: string,
+    currentStack : string[],
+    stackCounter : number
   }

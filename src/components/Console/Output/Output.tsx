@@ -8,7 +8,7 @@ interface outputProps
 }
 function Output(props:outputProps) {
   return (
-    <div className={CSS.output}>
+    <div className={CSS.output} id="output">
       {!props.newline? <span style={{
           fontWeight : "bold",
           color : "var(--demba-light-grey)"

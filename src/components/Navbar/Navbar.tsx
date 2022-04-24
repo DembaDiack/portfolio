@@ -28,8 +28,8 @@ function Navbar(props: NavProps) {
   return (
     <div className={CSS.navbar}>
       <div className={CSS.left}>
-        <div className={CSS.pp}></div>
         <div className={CSS.logo}>{props.title}</div>
+        
       </div>
       <div className={CSS.right}>
         <div>

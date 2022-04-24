@@ -4,11 +4,14 @@ import Output from "./Output/Output";
 export default function handleCommand(command:string,key:number):JSX.Element
 {
     const params:any = {
-        contacts : {
+        contact : {
             action : getContacts
         },
         skills : {
             action : skillsList
+        },
+        help : {
+            action : help
         }
     }
 
@@ -42,4 +45,12 @@ function getContacts(key:number):JSX.Element
 function skillsList(key:number):JSX.Element
 {
     return <Output key={key} text="skills list"/>
+}
+function help(key:number):JSX.Element
+{
+    return <>
+    <Output key={key} text="help"/>
+    <Output newline key={key} text="--contact to see how to contact me"/>
+    <Output newline key={key} text="--skills to see all the technologies i use"/>
+    </>
 }

@@ -10,6 +10,7 @@ import BGParticles from "./components/BGParticles/BGParticles";
 import AboutMe from "./components/Sections/AboutMe/AboutMe";
 import WhatYouNeed from "./components/Sections/WhatYouNeed/WhatYouNeed";
 import Particle from "./components/Particles/Particle";
+import Iam from "./components/Sections/Iam/Iam";
 
 function App() {
   const state = useSelector((state: RootState) => {
@@ -29,6 +30,8 @@ function App() {
       <BGParticles/>
       <AboutMe/>
       <Particle/>
+      <WhatYouNeed/>
+      <Iam/>
       <WhatYouNeed/>
     </div>
   );

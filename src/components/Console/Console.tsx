@@ -12,6 +12,8 @@ function Console() {
     triggerOnce: true,
     rootMargin: "-100px 0px",
   });
+  const outputareaRef = useRef<any>();
+
   const inputRef = useRef<any>();
   const [inputValue, setInputValue] = useState("");
   const [outputArr,setOutputArr] = useState([
@@ -36,6 +38,7 @@ function Console() {
         }
     })
   },[]);
+
   return (
     <motion.div
       ref={titleRef}
@@ -51,7 +54,7 @@ function Console() {
       </div>
       <Divider />
       <div className={CSS.bottom}>
-        <div className={CSS.outputarea} style={{
+        <div id={"outputarea"} className={CSS.outputarea} style={{
             overflowY : "scroll"
         }}>
             {outputArr}

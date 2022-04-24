@@ -4,12 +4,12 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "./components/Navbar/Navbar";
 import { RootState } from "./store/store";
-import Banner from "./components/Banner/Banner";
 import Section from "./components/Section/Section";
 import { incCounter } from "./store/reducers/AppReducer";
 import BGParticles from "./components/BGParticles/BGParticles";
 import AboutMe from "./components/Sections/AboutMe/AboutMe";
 import WhatYouNeed from "./components/Sections/WhatYouNeed/WhatYouNeed";
+import Particle from "./components/Particles/Particle";
 
 function App() {
   const state = useSelector((state: RootState) => {
@@ -20,15 +20,15 @@ function App() {
   useEffect(()=>{
       setTimeout(()=>{
           dispatch(incCounter());
-      },5000);
+      },15000);
   },[state.AppReducer.stackCounter]);
 
   return (
     <div className="app-container">
       <Navbar title="Demba Diack" />
       <BGParticles/>
-      <Banner />
       <AboutMe/>
+      <Particle/>
       <WhatYouNeed/>
     </div>
   );

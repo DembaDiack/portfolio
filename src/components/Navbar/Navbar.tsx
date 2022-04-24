@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faCoffee } from "@fortawesome/free-solid-svg-icons";
 import LinkedInLogo from "../../assets/linkedin.svg";
 import GitHubLogo from "../../assets/github.svg";
+import MyPicture from "../../assets/me.jpg";
 
 export interface NavProps {
   title: string;
@@ -27,6 +28,7 @@ function Navbar(props: NavProps) {
   return (
     <div className={CSS.navbar}>
       <div className={CSS.left}>
+        <div className={CSS.pp}></div>
         <div className={CSS.logo}>{props.title}</div>
       </div>
       <div className={CSS.right}>

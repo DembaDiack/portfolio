@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import ReactIcon from "../../../assets/react.svg";
-import MongoDBIcon from "../../../assets/mongodb.svg";
-import TypeScriptIcon from "../../../assets/typescript.svg";
-import NodeIcon from "../../../assets/nodejs.svg";
+import ReactIcon from "../../assets/react.svg";
+import MongoDBIcon from "../../assets/mongodb.svg";
+import TypeScriptIcon from "../../assets/typescript.svg";
+import NodeIcon from "../../assets/nodejs.svg";
 import CSS from "./Particle.module.css";
 import { CSSTransition } from "react-transition-group";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../store/store";
+import { RootState } from "../../store/store";
 
 const icons = [TypeScriptIcon,ReactIcon, MongoDBIcon, NodeIcon];
 
@@ -34,7 +34,7 @@ const state = useSelector((state:RootState) => state);
         timeout={600}
         in={true}
       >
-        <img className={CSS.particle} width={50} src={icons[state.AppReducer.stackCounter]} />
+        <img className={CSS.particle} width={20} src={icons[state.AppReducer.stackCounter]} />
       </CSSTransition>
     </div>
   );

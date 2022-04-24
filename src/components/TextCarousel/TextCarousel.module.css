@@ -11,4 +11,6 @@
     align-items: center;
     width: auto;
     max-width: 10000px;
+    height: 100%;
+    min-height: 500px;
 }

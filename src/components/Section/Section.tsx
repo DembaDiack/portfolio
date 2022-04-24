@@ -9,7 +9,8 @@ interface sectionProps {
   sharp?: boolean;
   height?:string,
   row?:boolean,
-  style?: React.CSSProperties | undefined
+  style?: React.CSSProperties | undefined,
+  className?:string | undefined
 }
 
 function Section(props: sectionProps) {
@@ -23,9 +24,8 @@ function Section(props: sectionProps) {
       ref={titleRef}
       animate={{ scale: titleInView ? 1 : 0.8 }}
       transition={{ duration: 2.5 }}
-      className={`${CSS.grid} ${CSS.hoverScale}`}
+      className={`${CSS.grid} ${CSS.hoverScale} ${props.className ? props.className : ''}`}
       style={{
-        marginTop: 15,
         overflow: "hidden",
         width: props.width ? props.width : "80%",
         borderRadius: props.sharp ? "0px" : "15px",

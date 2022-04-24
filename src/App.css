@@ -80,3 +80,8 @@
   transform: translateY(-1000px);
   transition: 0.3s;
 }
+body 
+{
+  overflow-x: hidden;
+  background-color: var(--demba-dark);
+}

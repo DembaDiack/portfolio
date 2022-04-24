@@ -44,45 +44,6 @@ function BGParticles() {
       <div className={`${CSS.particle} ${CSS.nobg}`}>
           <img width={30} src={MongoDBIcon}/>
       </div>
-      <div className={`${CSS.particle} ${CSS.nobg}`}>
-          <img width={30} src={MongoDBIcon}/>
-      </div>
-      <div className={`${CSS.particle} ${CSS.nobg}`}>
-          <img width={30} src={MongoDBIcon}/>
-      </div>
-      <div className={`${CSS.particle} ${CSS.nobg}`}>
-          <img width={30} src={MongoDBIcon}/>
-      </div>
-      <div className={`${CSS.particle} ${CSS.nobg}`}>
-          <img width={30} src={MongoDBIcon}/>
-      </div>
-      <div className={`${CSS.particle} ${CSS.nobg}`}>
-          <img width={30} src={MongoDBIcon}/>
-      </div>
-      <div className={`${CSS.particle} ${CSS.nobg}`}>
-          <img width={30} src={MongoDBIcon}/>
-      </div>
-      <div className={`${CSS.particle} ${CSS.nobg}`}>
-          <img width={30} src={MongoDBIcon}/>
-      </div>
-      <div className={`${CSS.particle} ${CSS.nobg}`}>
-          <img width={30} src={MongoDBIcon}/>
-      </div>
-      <div className={`${CSS.particle} ${CSS.nobg}`}>
-          <img width={30} src={MongoDBIcon}/>
-      </div>
-      <div className={`${CSS.particle} ${CSS.nobg}`}>
-          <img width={30} src={MongoDBIcon}/>
-      </div>
-      <div className={`${CSS.particle} ${CSS.nobg}`}>
-          <img width={30} src={MongoDBIcon}/>
-      </div>
-      <div className={`${CSS.particle} ${CSS.nobg}`}>
-          <img width={30} src={MongoDBIcon}/>
-      </div>
-      <div className={`${CSS.particle} ${CSS.nobg}`}>
-          <img width={30} src={MongoDBIcon}/>
-      </div>
     </div>
   );
 }

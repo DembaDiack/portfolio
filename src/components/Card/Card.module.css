@@ -1,0 +1,64 @@
+.card 
+{
+    height: auto;
+    width: auto;
+    margin: 5px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 20px;
+}
+.right 
+{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: flex-start !important;
+    justify-content: flex-start;
+    justify-items: flex-start;
+    text-align: left;
+}
+.bottom 
+{
+    inline-size: 80%;
+}
+.left 
+{
+    display: flex;
+    justify-content: inherit;
+    align-content: inherit;
+    align-items: inherit;
+    justify-items: inherit;
+}
+.top 
+{
+    font-weight: bold;
+    font-size: 5vmin;
+}
+.icon 
+{
+    height: 70px;
+    width: 70px;
+    display: flex;
+    background-color: rgb(23, 23, 23);
+    border-radius: 15px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    transition: 0.9s;
+    cursor: pointer;
+}
+.icon:hover, .icon:active ,.icon:focus
+{
+    transform: rotate(360deg);
+}
+@media only screen and (max-width: 800px) {
+    .card 
+    {
+        justify-content: flex-start !important;
+    }
+    .bottom 
+    {
+        inline-size: 100%;
+    }
+}

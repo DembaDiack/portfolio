@@ -1,5 +1,6 @@
 interface AppState {
     name: string,
     currentStack : string[],
-    stackCounter : number
+    stackCounter : number,
+    consoleOutput : JSX.Element[]
   }

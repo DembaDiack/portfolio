@@ -4,40 +4,34 @@ import { useInView } from "react-intersection-observer";
 import Divider from "../Divider/Divider";
 import CSS from "./Console.module.css";
 import Output from "./Output/Output";
-import update from 'immutability-helper';
+import update from "immutability-helper";
 import handleCommand from "./Commander";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store/store";
+import { appendOutput } from "../../store/reducers/AppReducer";
 
 function Console() {
   const [titleRef, titleInView] = useInView({
     triggerOnce: true,
     rootMargin: "-100px 0px",
   });
-  const outputareaRef = useRef<any>();
-
   const inputRef = useRef<any>();
   const [inputValue, setInputValue] = useState("");
-  const [outputArr,setOutputArr] = useState([
-      <Output text="Welcome to my commandline! type --help to see what you can do"/>
-  ]);
+  const state = useSelector((state: RootState) => state);
+  const dispatch = useDispatch();
+  const outputareaRef = useRef<any>();
 
-  const handleSubmit = () => {
-      const result = handleCommand(inputRef.current.value,outputArr.length);
-        let temp = outputArr;
-        temp.push(result);
-        setOutputArr(temp);
-  }
-  useEffect(()=>{
-    document.addEventListener("keydown",(e)=>{
-        if(e.key == "Enter")
-        {
-            e.stopPropagation();
-            e.cancelBubble = true;
-            handleSubmit();
-            setInputValue("");
-            inputRef.current.focus();
-        }
-    })
-  },[]);
+  useEffect(() => {
+    document.addEventListener("keydown", (e) => {
+      if (e.key == "Enter") {
+        e.stopPropagation();
+        e.cancelBubble = true;
+        handleCommand(inputRef.current.value, dispatch);
+        setInputValue("");
+        inputRef.current.focus();
+      }
+    });
+  }, []);
 
   return (
     <motion.div
@@ -54,16 +48,34 @@ function Console() {
       </div>
       <Divider />
       <div className={CSS.bottom}>
-        <div id={"outputarea"} className={CSS.outputarea} style={{
-            overflowY : "scroll"
-        }}>
-            {outputArr}
+        <div
+          id={"outputarea"}
+          ref={outputareaRef}
+          className={CSS.outputarea}
+          style={{
+            overflowY: "scroll",
+          }}
+        >
+          <Output text="Welcome to my fun little console! type --help to see what you can do!" />
+          <Output
+            newline
+            text="this is actually a reusable console component"
+          />
+          <Output
+            newline
+            text="that i made from scratch, you can totaly reuse it!"
+          />
+          {state.AppReducer.consoleOutput}
         </div>
         <div className={CSS.inputarea}>
-        <span style={{
-          fontWeight : "bold",
-          color : "var(--demba-light-grey)"
-      }}>$Demba </span>
+          <span
+            style={{
+              fontWeight: "bold",
+              color: "var(--demba-light-grey)",
+            }}
+          >
+            $Demba{" "}
+          </span>
           <input
             value={inputValue}
             onInput={(e) => setInputValue(e.currentTarget.value)}

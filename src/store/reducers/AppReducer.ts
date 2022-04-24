@@ -3,7 +3,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 const initialState:AppState = {
     name : "myportfolio",
     currentStack : ["TYPESCRIPT","REACT","MONGODB","NODEJS"],
-    stackCounter : 0
+    stackCounter : 0,
+    consoleOutput : []
 }
 export const AppSlice = createSlice({
     name : "AppSlice",
@@ -18,9 +19,13 @@ export const AppSlice = createSlice({
             {
                 state.stackCounter++;
             }
+        },
+        appendOutput : (state,action:PayloadAction<JSX.Element>) => {
+            state.consoleOutput.push(action.payload);
+            document.querySelector("#outputarea")?.scroll({top : document.querySelector("#outputarea")?.scrollHeight});
         }
     }
 });
 
-export const {incCounter} = AppSlice.actions;
+export const {incCounter,appendOutput} = AppSlice.actions;
 export default AppSlice.reducer;

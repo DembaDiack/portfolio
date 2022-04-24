@@ -32,7 +32,6 @@ function App() {
       <Particle/>
       <WhatYouNeed/>
       <Iam/>
-      <WhatYouNeed/>
     </div>
   );
 }

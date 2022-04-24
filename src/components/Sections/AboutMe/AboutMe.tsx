@@ -2,7 +2,7 @@ import React from "react";
 import Divider from "../../Divider/Divider";
 import Section from "../../Section/Section";
 import CSS from "./AboutMe.module.css";
-import TypescriptIcon from "../../../assets/typescript.svg";
+import FirebaseIcon from "../../../assets/firebase.svg";
 import MyPicture from "../../../assets/me.jpg";
 import Button from "../../Button/Button";
 
@@ -16,7 +16,7 @@ function AboutMe() {
         I am a simple guy, with a complex mind
       </div>
       <div style={{marginTop : 10}}>
-        <Button/>
+      <img className={CSS.icon} src={FirebaseIcon} width={50}/>
       </div>
     </Section>
   );

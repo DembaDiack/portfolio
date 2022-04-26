@@ -32,6 +32,15 @@ function Console() {
       }
     });
   }, []);
+  const resetZoom = (e: React.FocusEvent<HTMLDivElement, Element>) => {
+    // @ts-ignore
+    const viewportmeta = document.querySelector("meta[name=viewport]");
+    viewportmeta?.setAttribute(
+      "content",
+      "initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
+    );
+    console.log(e, "blured");
+  };
 
   return (
     <motion.div
@@ -79,6 +88,7 @@ function Console() {
           <input
             value={inputValue}
             onInput={(e) => setInputValue(e.currentTarget.value)}
+            onBlur={(e) => resetZoom(e)}
             ref={inputRef}
             type={"text"}
             className={CSS.consoleinput}

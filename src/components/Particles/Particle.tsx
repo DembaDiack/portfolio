@@ -7,24 +7,20 @@ import CSS from "./Particle.module.css";
 import { CSSTransition } from "react-transition-group";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
+import useIcon from "../../hooks/useIcon";
 
-const icons = [TypeScriptIcon,ReactIcon, MongoDBIcon, NodeIcon];
-
+const icons = [TypeScriptIcon, ReactIcon, MongoDBIcon, NodeIcon];
+const rand_x = Math.floor(Math.random() * 100) + 1;
 function Particle() {
-//   const [counter, setCounter] = useState(0);
-//   const handleIconChange = (
-//     e: React.MouseEvent<HTMLDivElement, MouseEvent>
-//   ) => {
-//     if (counter == icons.length - 1) setCounter(0);
-//     else setCounter(counter + 1);
-//   };
-const state = useSelector((state:RootState) => state);
+  const state = useSelector((state: RootState) => state);
+  const icon = useIcon();
+
+  useEffect(()=>{
+    console.log(icon);
+  },[icon]);
 
   return (
-    <div
-      style={{ cursor: "pointer" }}
-      className={CSS.particle_orbit}
-    >
+    <div style={{ cursor: "pointer",left : `${rand_x}%` }} className={CSS.particle_orbit}>
       <CSSTransition<undefined>
         addEndListener={(node: HTMLElement, done: () => void) => {
           node.addEventListener("transitionend", done, false);
@@ -34,7 +30,7 @@ const state = useSelector((state:RootState) => state);
         timeout={600}
         in={true}
       >
-        <img className={CSS.particle} width={20} src={icons[state.AppReducer.stackCounter]} />
+        {icon ? icon : <span></span>}
       </CSSTransition>
     </div>
   );

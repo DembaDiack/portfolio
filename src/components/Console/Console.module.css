@@ -1,5 +1,5 @@
 .console {
-  height: 180px;
+  height: 300px;
   background: whitesmoke;
   max-width: 700px;
   width: 90%;
@@ -72,7 +72,6 @@
 }
 .console:focus-within 
 {
-  height: 300px;
 }
 .inputarea
 {

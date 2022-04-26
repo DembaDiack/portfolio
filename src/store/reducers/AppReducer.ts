@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 const initialState:AppState = {
     name : "myportfolio",
-    currentStack : ["TYPESCRIPT","REACT","MONGODB","NODEJS"],
+    currentStack : ["TYPESCRIPT","REACT","MONGODB","NODEJS","REDUX"],
     stackCounter : 0,
     consoleOutput : []
 }
